@@ -136,8 +136,11 @@ section {
 
 /* Header principal */
 .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 1000;
     background: rgba(255, 255, 255, 0.98);
     border-bottom: 1px solid var(--gray-light);
@@ -260,6 +263,11 @@ section {
     width: 100%;
 }
 
+/* Mantener línea visible cuando dropdown está activo */
+.dropdown.active>a::after {
+    width: 100%;
+}
+
 /* Dropdown Styles */
 .dropdown {
     position: relative;
@@ -287,7 +295,7 @@ section {
     border: 1px solid var(--gray-light);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
-    min-width: 280px;
+    min-width: 290px;
     list-style: none;
     padding: 8px 0;
     opacity: 0;
@@ -307,6 +315,11 @@ section {
 
 .dropdown-menu li {
     margin: 0;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
 }
 
 .dropdown-menu a {
@@ -345,6 +358,7 @@ section {
     background-color: var(--primary);
     color: white;
     border: 1px solid var(--primary);
+    flex-shrink: 0;
 }
 
 .nav-cta:hover {
