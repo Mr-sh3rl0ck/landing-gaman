@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMAN | Consultoría Industrial de Alto Nivel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <!-- Radio inputs para controlar el menú (hidden) -->
+        <input type="radio" name="nav-state" id="close-navigation" class="close-navigation" checked>
+        <input type="radio" name="nav-state" id="open-navigation" class="open-navigation">
+
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="#inicio" class="logo">
+                GAMAN<span>我慢</span>
+            </a>
+
+            <!-- Botón hamburguesa (solo visible en móvil) -->
+            <label for="open-navigation" class="hamburger-btn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Navegación -->
+            <nav class="nav-list">
+                <!-- Botón cerrar (dentro del menú móvil) -->
+                <label for="close-navigation" class="close-btn" aria-label="Cerrar menú">
+                    <span>&times;</span>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Quiénes Somos</a></li>
+                    <li class="dropdown">
+                        <a href="#servicios" class="dropdown-toggle">
+                            Servicios <i class="fa-solid fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#mantenimiento">Mantenimiento de Edificios</a></li>
+                            <li><a href="#wcm">Manufactura World Class (WCM)</a></li>
+                            <li><a href="#proyectos">Proyectos de Ahorro y Rentabilidad</a></li>
+                            <li><a href="#certificaciones">Certificaciones y Formación</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+
+                <a href="#contacto" class="btn btn-primary nav-cta">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero-section">
+        <img src="assets/hero_v7.png" alt="Planta Industrial Moderna" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="container relative z-10">
+            <div class="hero-content">
+                <h1>Excelencia Operativa e Ingeniería de Precisión</h1>
+                <p>Transformamos plantas industriales mediante metodologías de clase mundial, optimización de activos y
+                    cumplimiento normativo riguroso.</p>
+                <div class="hero-btns">
+                    <a href="#contacto" class="btn btn-primary">Solicitar Diagnóstico</a>
+                    <a href="#servicios" class="btn btn-outline">Ver Soluciones</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-tag">Quiénes Somos</span>
+                    <h2 class="section-title">Consultores Expertos en la Industria</h2>
+                    <p class="section-desc">
+                        Somos una empresa con soluciones a tu medida, con experiencia en el ramo para poder apoyar de
+                        manera integral en todas las necesidades de nuestros clientes.
+                    </p>
+
+                    <div class="mission-vision-inline">
+                        <div class="mv-item">
+                            <div class="mv-icon">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div class="mv-text">
+                                <h4>Misión</h4>
+                                <p>Apoyar de manera integral en todas las necesidades de nuestros clientes con
+                                    soluciones a medida.</p>
+                            </div>
+                        </div>
+                        <div class="mv-divider"></div>
+                        <div class="mv-item">
+                            <div class="mv-icon">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <div class="mv-text">
+                                <h4>Visión</h4>
+                                <p>Consolidarnos como la empresa que ofrece servicios integrales con el fin de tener una
+                                    experiencia positiva con el cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <strong>+15</strong>
+                            <span>Años de Experiencia</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>+200</strong>
+                            <span>Proyectos Exitosos</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>100%</strong>
+                            <span>Certificados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-video-wrapper">
+                    <img src="assets/about_v7.png" alt="Equipo de Ingenieros GAMAN" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="services-section">
+        <div class="container">
+            <div class="section-header center" style="text-align: center; margin: 0 auto 80px auto;">
+                <span class="section-tag">Nuestras Soluciones</span>
+                <h2 class="section-title">Servicios Industriales Integrales</h2>
+                <p class="section-desc">Implementación estratégica cubriendo todas las áreas operativas.</p>
+            </div>
+
+            <div id="mantenimiento" class="service-row">
+                <div class="service-content">
+                    <h3>Mantenimiento de Edificios e Industrial</h3>
+                    <p>Conservación integral de instalaciones y equipos para máxima operatividad.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Remodelaciones de edificios</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Mantenimiento a edificios (pintura, pisos)</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Mtto. a rampas, celdas y líneas</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Electricidad Industrial</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Subestaciones</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Mantenimiento tratadoras de agua</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Implementación de los procesos regulación residuos
+                                peligrosos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-visual">
+                    <img src="assets/mantenimiento_v7.png" alt="Técnico Industrial">
+                </div>
+            </div>
+
+            <div id="wcm" class="service-row">
+                <div class="service-content">
+                    <h3>Manufactura World Class (WCM)</h3>
+                    <p>Metodologías para la excelencia operativa y mejora continua.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Seguridad y Salud</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Despliegue de costos</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Mejora Enfocada</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Actividades Autónomas</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Mantenimiento Profesional</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Control de Calidad</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Logística / Cadena de Suministro</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Gestión temprana del equipo multidiciplinario</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Desarrollo del personal</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Medio Ambiente</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Industria 5.0</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">HPO ( High Performance Organization) </span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Implementación TPS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-visual">
+                    <img src="assets/wcm_v7.png" alt="Línea de Producción WCM">
+                </div>
+            </div>
+
+            <div id="proyectos" class="service-row">
+                <div class="service-content">
+                    <h3>Proyectos de Ahorro y Rentabilidad</h3>
+                    <p>Estrategias para incrementar productividad y reducir costos.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">VSM</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">KAIZEN / MEJORA CONTINUA</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Balanceo de líneas</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Tiempos y movimientos</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">SMED</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">8 Disciplinas</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Proyectos de ahorro</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Reducción de inventarios</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Planeación de compras</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">KANBAN</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Solución de problemas</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Design Thinking / 5's</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Negocios en crecimiento</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Trabajo Estandarizado</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Indicadores SMART</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-visual">
+                    <img src="assets/proyectos_v7.png" alt="Ingenieros en Proyecto">
+                </div>
+            </div>
+
+            <div id="certificaciones" class="service-row">
+                <div class="service-content">
+                    <h3>Certificaciones y Formación</h3>
+                    <p>Preparación para premios internacionales y cumplimiento normativo.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Preparación Shingo Prize</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">GPTOWORK</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Formación de líderes</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Formación auditores internos</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-check"></i></div>
+                            <span class="feature-text">Interpretación normas ISO / IAF</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-visual">
+                    <img src="assets/iso_v7.png" alt="Auditoría ISO">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="contact-section">
+        <div class="container contact-container">
+            <div class="contact-info-wrapper">
+                <span class="section-subtitle">Contáctanos</span>
+                <h2>Trabajemos Juntos</h2>
+                <p>Estamos listos para potenciar tu empresa. Agenda una cita hoy mismo.</p>
+
+                <div class="contact-profile">
+                    <img src="assets/avatar-norma.png" alt="Norma Paredes">
+                    <div>
+                        <strong>Ing. Norma Paredes</strong>
+                        <span>Consultor Senior</span>
+                    </div>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="method">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <small>Llámanos</small>
+                            <a href="tel:+525512345678">+52 81 8013 3575</a>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <small>Correo</small>
+                            <a href="mailto:contacto@gaman.com">norma.paredes13@icloud.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="glass-form" name="contact" method="POST" data-netlify="true">
+                    <h3>Envíanos un mensaje</h3>
+                    <div class="input-group">
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" name="telefono" placeholder="Teléfono">
+                    </div>
+                    <div class="input-group">
+                        <textarea name="mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="footer-logo">GAMAN<span>我慢</span></a>
+                <p>Transformando la industria mediante excelencia operativa, ingeniería de precisión y compromiso con la
+                    seguridad.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Quiénes Somos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col services-col">
+                <h4>Servicios Principales</h4>
+                <ul>
+                    <li><a href="#servicios">Mantenimiento Industrial</a></li>
+                    <li><a href="#servicios">Manufactura WCM</a></li>
+                    <li><a href="#servicios">Proyectos de Ahorro</a></li>
+                    <li><a href="#servicios">Seguridad Industrial</a></li>
+                    <li><a href="#servicios">Certificaciones ISO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Contacto</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+525512345678">+52 81 8013 3575</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:norma.paredes13@icloud.com">norma.paredes13@icloud.com</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Monterrey, N.L., México</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 GAMAN. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a>
+                    <span class="separator">|</span>
+                    <a href="#">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
