@@ -687,13 +687,13 @@ section:not(.hero-section) {
 
     /* Hero Section - Tablet */
     .hero-section {
-        height: 100svh;
-        min-height: 100svh;
+        height: 100vh;
+        min-height: 100vh;
     }
 
     .hero-bg {
-        height: 100svh;
-        min-height: 100svh;
+        height: 100vh;
+        min-height: 100vh;
     }
 
     .hero-content h1 {
@@ -718,7 +718,7 @@ section:not(.hero-section) {
 
     /* About Section - Tablet 100vh */
     #nosotros {
-        min-height: 100svh;
+        min-height: 100vh;
         padding: 40px 0 !important;
         /* Reducido para mejor distribución */
         display: flex;
@@ -1218,8 +1218,8 @@ section:not(.hero-section) {
 .hero-section {
     position: relative;
     width: 100%;
+    height: 100vh;
     min-height: 100vh;
-    min-height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
