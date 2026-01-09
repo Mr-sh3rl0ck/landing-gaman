@@ -693,7 +693,7 @@ section:not(.hero-section) {
 
     /* Hero Section - Tablet */
     .hero-section {
-        height: 100dvh;
+        height: 100svh;
         min-height: 100dvh;
     }
 
