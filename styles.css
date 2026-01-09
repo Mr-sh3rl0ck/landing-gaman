@@ -518,11 +518,25 @@ section:not(.hero-section) {
 
     .nav-links li {
         width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        position: relative;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
-    .nav-links li:last-child {
-        border-bottom: none;
+    /* Línea separadora con gradiente */
+    .nav-links li::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 5%;
+        width: 90%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(79, 134, 153, 0.3), transparent);
+        opacity: 0.8;
+    }
+
+    .nav-links li:last-child::after {
+        display: none;
     }
 
     .nav-links a {
@@ -2605,7 +2619,7 @@ section:not(.hero-section) {
 
     /* Hero Section */
     .hero-section {
-        min-height: 500px;
+        min-height: 100dvh;
         height: auto;
         padding: 80px 0 60px;
     }
