@@ -48,7 +48,38 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Smooth scroll with centered positioning for all navigation links
+    // ========================================
+    // CONFIGURACIÓN DE SCROLL PERSONALIZADO
+    // ========================================
+    // Aquí puedes ajustar el offset de scroll para cada sección
+    // de manera independiente para desktop y mobile
+
+    const scrollConfig = {
+        // Configuración para DESKTOP (> 768px)
+        desktop: {
+            '#inicio': 0,           // Sin offset adicional
+            '#nosotros': 75,        // Ajuste positivo = scroll más abajo
+            '#servicios': 0,        // Sin offset adicional
+            '#mantenimiento': -120,  // Ajuste negativo = scroll más arriba
+            '#wcm': -40,            // Ajuste negativo = scroll más arriba
+            '#proyectos': -30,      // Ajuste negativo = scroll más arriba
+            '#certificaciones': 1,// Ajuste negativo = scroll más arriba
+            '#contacto': 60          // Alinear al tope del viewport
+        },
+        // Configuración para MOBILE/TABLET (<= 768px)
+        mobile: {
+            '#inicio': 0,           // Sin offset adicional
+            '#nosotros': 93,        // Ajuste positivo = scroll más abajo
+            '#servicios': 0,        // Sin offset adicional
+            '#mantenimiento': 6,  // Ajuste negativo = scroll más arriba
+            '#wcm': 6,            // Ajuste negativo = scroll más arriba
+            '#proyectos': 6,      // Ajuste negativo = scroll más arriba
+            '#certificaciones': -86,// Ajuste negativo = scroll más arriba
+            '#contacto': 60          // Alinear al tope del viewport
+        }
+    };
+
+    // Smooth scroll con offsets personalizados
     const allNavLinks = document.querySelectorAll('a[href^="#"]');
 
     allNavLinks.forEach(link => {
@@ -70,34 +101,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
                 const elementHeight = targetElement.offsetHeight;
                 const windowHeight = window.innerHeight;
+                const isMobile = window.innerWidth <= 768;
 
                 let offsetPosition;
 
-                // Logic to center the content in the viewport *considering the navbar*
-                // Available height to view content is windowHeight - navbarHeight
-                const availableHeight = windowHeight - navbarHeight;
-
-                if (elementHeight < availableHeight) {
-                    // If element fits in the available space below navbar:
-                    // We want to center it in that available space.
-                    offsetPosition = elementTop - (navbarHeight + (availableHeight - elementHeight) / 2);
+                // Determinar el offset base según el dispositivo
+                if (isMobile) {
+                    // Mobile/Tablet: offset simple desde el navbar
+                    offsetPosition = elementTop - navbarHeight - 10;
                 } else {
-                    // If taller than available space, align to top (just below navbar)
-                    offsetPosition = elementTop - navbarHeight - 20;
+                    // Desktop: centrar contenido si cabe, o alinear arriba si es muy alto
+                    const availableHeight = windowHeight - navbarHeight;
+
+                    if (elementHeight < availableHeight) {
+                        // Centrar contenido si cabe en el viewport
+                        offsetPosition = elementTop - (navbarHeight + (availableHeight - elementHeight) / 2);
+                    } else {
+                        // Alinear arriba si el contenido es muy alto
+                        offsetPosition = elementTop - navbarHeight - 40;
+                    }
                 }
 
-                // Apply fine-tuning for specific sections (ALWAYS applied)
-                if (targetId === '#nosotros') {
-                    // "un poco mas abajo" -> Scroll LESS -> Smaller offset
-                    offsetPosition -= -75;
-                } else if (targetId === '#mantenimiento') {
-                    // "un poco mas arriba" -> Scroll MORE -> Larger offset
-                    // Using 90 to give it a good lift as requested
-                    offsetPosition += -86;
-                } else if (targetId === '#contacto') {
-                    // "abarque todo el vh" -> Align top of section to top of viewport
-                    offsetPosition = elementTop;
-                }
+                // Aplicar offset personalizado según la configuración
+                const config = isMobile ? scrollConfig.mobile : scrollConfig.desktop;
+                const customOffset = config[targetId] || 0;
+
+                // Aplicar el offset personalizado a todas las secciones
+                offsetPosition += customOffset;
 
                 window.scrollTo({
                     top: offsetPosition,

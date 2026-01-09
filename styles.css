@@ -151,6 +151,7 @@ section:not(.hero-section) {
     padding: 16px 0;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-light);
 }
 
 .header-container {
@@ -304,7 +305,6 @@ section:not(.hero-section) {
     box-shadow: var(--shadow-lg);
     min-width: 290px;
     list-style: none;
-    padding: 8px 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -360,17 +360,42 @@ section:not(.hero-section) {
     border-radius: var(--radius-sm);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     background-color: var(--primary);
     color: white;
     border: 1px solid var(--primary);
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(79, 134, 153, 0.2);
+}
+
+.nav-cta-desktop::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-cta-desktop:hover::before {
+    left: 100%;
 }
 
 .nav-cta-desktop:hover {
     background-color: var(--primary-dark);
     border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(79, 134, 153, 0.4);
+}
+
+.nav-cta-desktop:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(79, 134, 153, 0.3);
 }
 
 /* CTA Button - Mobile (oculto en desktop) */
@@ -879,12 +904,6 @@ section:not(.hero-section) {
         height: 40px;
     }
 
-    /* Hero Section - Mobile */
-    .hero-section {
-        height: 100dvh;
-        min-height: 100dvh;
-    }
-
     .hero-content {
         max-width: 100%;
         padding: 0 8px;
@@ -1232,6 +1251,10 @@ section:not(.hero-section) {
     /* border-top removed */
 }
 
+.stat-item {
+    text-align: center;
+}
+
 .stat-item strong {
     display: block;
     font-size: 2rem;
@@ -1485,6 +1508,12 @@ section:not(.hero-section) {
     }
 }
 
+@media (max-width: 821px) {
+    .about-video-wrapper {
+        display: none;
+    }
+}
+
 /* ===== MÓVIL (< 768px) ===== */
 @media (max-width: 767px) {
     .services-section {
@@ -1561,6 +1590,7 @@ section:not(.hero-section) {
 
 /* ===== MÓVIL PEQUEÑO (< 480px) ===== */
 @media (max-width: 480px) {
+
     .service-row {
         padding: 0 12px 60px 12px;
         /* Padding inferior para el divisor */
@@ -1913,32 +1943,33 @@ section:not(.hero-section) {
 .services-col ul a {
     color: rgba(255, 255, 255, 0.65);
     font-size: 0.95rem;
-    transition: all 0.2s ease;
+    transition: color 0.3s ease;
     display: inline-block;
     position: relative;
+    padding-bottom: 2px;
 }
 
-.links-col ul a::before,
-.services-col ul a::before {
+.links-col ul a::after,
+.services-col ul a::after {
     content: '';
     position: absolute;
-    left: 0;
-    bottom: -2px;
     width: 0;
-    height: 1px;
-    background: var(--primary);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
     transition: width 0.3s ease;
 }
 
 .links-col ul a:hover,
 .services-col ul a:hover {
     color: var(--primary);
-    padding-left: 8px;
 }
 
-.links-col ul a:hover::before,
-.services-col ul a:hover::before {
-    width: 20px;
+.links-col ul a:hover::after,
+.services-col ul a:hover::after {
+    width: 100%;
 }
 
 /* Contact Column */
@@ -2384,9 +2415,6 @@ section:not(.hero-section) {
     }
 }
 
-/* --- Nuevos Estilos para MisiÃ³n/VisiÃ³n y Listas Completas --- */
-
-/* CuadrÃ­cula para MisiÃ³n y VisiÃ³n */
 .mission-vision-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
