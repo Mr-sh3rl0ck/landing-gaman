@@ -807,7 +807,7 @@ section:not(.hero-section) {
 }
 
 /* ===== MOBILE (≤ 390px) ===== */
-@media (max-width: 375px) {
+@media (max-width: 320px) {
 
     /* Header más compacto pero con buen aire */
     .site-header {
