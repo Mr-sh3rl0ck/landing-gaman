@@ -27,16 +27,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Close mobile menu when clicking on any navigation link
-    const closeNavRadio = document.getElementById('close-navigation');
+    // Close mobile menu when clicking on navigation links (but NOT dropdown toggle)
+    const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.querySelectorAll('.nav-links a');
 
     navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-            if (closeNavRadio) {
+        link.addEventListener('click', function (e) {
+            // Don't close menu if this is the dropdown toggle
+            if (this.classList.contains('dropdown-toggle')) {
+                return; // Let the dropdown toggle handler above handle it
+            }
+
+            // Only close menu for actual navigation links
+            if (menuToggle) {
                 // Small delay to allow navigation to start
                 setTimeout(() => {
-                    closeNavRadio.checked = true;
+                    menuToggle.checked = false;
                 }, 100);
             }
         });

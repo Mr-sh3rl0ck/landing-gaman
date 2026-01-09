@@ -12,9 +12,8 @@
 <body>
 
     <header class="site-header">
-        <!-- Radio inputs para controlar el menú (hidden) -->
-        <input type="radio" name="nav-state" id="close-navigation" class="close-navigation" checked>
-        <input type="radio" name="nav-state" id="open-navigation" class="open-navigation">
+        <!-- Checkbox para controlar el menú (hidden) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
         <div class="header-container">
             <!-- Logo -->
@@ -22,19 +21,15 @@
                 GAMAN<span>我慢</span>
             </a>
 
-            <!-- Botón hamburguesa (solo visible en móvil) -->
-            <label for="open-navigation" class="hamburger-btn" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
+            <!-- Botón hamburguesa que se transforma en X -->
+            <label for="menu-toggle" class="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </label>
 
             <!-- Navegación -->
             <nav class="nav-list">
-                <!-- Botón cerrar (dentro del menú móvil) -->
-                <label for="close-navigation" class="close-btn" aria-label="Cerrar menú">
-                    <span>&times;</span>
-                </label>
 
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
@@ -50,12 +45,14 @@
                             <li><a href="#certificaciones">Certificaciones y Formación</a></li>
                         </ul>
                     </li>
-                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
+
+                <!-- CTA dentro del menú móvil -->
+                <a href="#contacto" class="btn btn-primary nav-cta-mobile">Contacto</a>
             </nav>
 
-            <!-- Botón CTA separado -->
-            <a href="#contacto" class="btn btn-primary nav-cta">Contacto</a>
+            <!-- Botón CTA separado (solo desktop) -->
+            <a href="#contacto" class="btn btn-primary nav-cta-desktop">Contacto</a>
         </div>
     </header>
 
@@ -112,11 +109,11 @@
 
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <strong>+15</strong>
+                            <strong>+5</strong>
                             <span>Años de Experiencia</span>
                         </div>
                         <div class="stat-item">
-                            <strong>+200</strong>
+                            <strong>+50</strong>
                             <span>Proyectos Exitosos</span>
                         </div>
                         <div class="stat-item">
