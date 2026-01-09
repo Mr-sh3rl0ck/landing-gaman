@@ -409,13 +409,6 @@ section:not(.hero-section) {
         padding: 10px 24px;
         font-size: 0.9rem;
     }
-
-    /* Hero Section - Tablet Landscape */
-    .hero-section {
-        height: 100vh;
-        /* Force 100% height */
-        min-height: 100vh;
-    }
 }
 
 /* ===== TABLET PORTRAIT & MOBILE (≤ 768px) ===== */
@@ -442,7 +435,7 @@ section:not(.hero-section) {
 
     /* Mostrar botón hamburguesa */
     .hamburger-btn {
-        display: flex;
+        display: flex !important;
     }
 
     /* Botón hamburguesa optimizado */
@@ -587,7 +580,11 @@ section:not(.hero-section) {
     /* Hero Section - Tablet */
     .hero-section {
         height: 100dvh;
-        /* Dynamic 100vh for mobile browsers */
+        min-height: 100dvh;
+    }
+
+    .hero-bg {
+        height: 100dvh;
         min-height: 100dvh;
     }
 
@@ -810,7 +807,7 @@ section:not(.hero-section) {
 }
 
 /* ===== MOBILE (≤ 390px) ===== */
-@media (max-width: 390px) {
+@media (max-width: 375px) {
 
     /* Header más compacto pero con buen aire */
     .site-header {
@@ -884,7 +881,8 @@ section:not(.hero-section) {
 
     /* Hero Section - Mobile */
     .hero-section {
-        min-height: 100vh;
+        height: 100dvh;
+        min-height: 100dvh;
     }
 
     .hero-content {
@@ -1117,18 +1115,21 @@ section:not(.hero-section) {
 /* --- Hero Section --- */
 .hero-section {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #000;
     overflow: hidden;
+    padding: 0;
 }
 
 .hero-bg {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    /* Modern CSS: covers top, right, bottom, left */
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1138,8 +1139,8 @@ section:not(.hero-section) {
 
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    /* Modern CSS: covers top, right, bottom, left */
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
@@ -1622,7 +1623,6 @@ section:not(.hero-section) {
     }
 }
 
-/* --- Hide About Image for Specific Resolutions --- */
 /* Mobile: 390px width and below */
 @media (max-width: 390px) {
     .about-video-wrapper {
