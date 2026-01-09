@@ -724,7 +724,7 @@ section:not(.hero-section) {
 
     /* About Section - Tablet 100vh */
     #nosotros {
-        min-height: 100vh;
+        min-height: 100svh;
         padding: 40px 0 !important;
         /* Reducido para mejor distribución */
         display: flex;
@@ -2619,8 +2619,6 @@ section:not(.hero-section) {
 
     /* Hero Section */
     .hero-section {
-        min-height: 100dvh;
-        height: auto;
         padding: 80px 0 60px;
     }
 
